@@ -5,20 +5,32 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
-import configureStore from './stores/configureStores';
 
 import { Router, Route } from 'react-router';
 import { createBrowserHistory } from 'history'
 import indexRoutes from "./routes/index.jsx";
+
+import createSagaMiddleware from "redux-saga";
+import { createStore, applyMiddleware, compose } from "redux";
+import { reducer } from "./redux";
+import { watcherSaga } from "./sagas";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware();
+
+let store = createStore(reducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
 /*
 import {createBrowserHistory} from "history";
 import { syncHistoryWithStore } from 'react-router-redux';*/
 
 const hist = createBrowserHistory();
-const store = configureStore();
 
 // Create an enhanced history that syncs navigation events with the store
 // const history = syncHistoryWithStore(hist, store);
+
+sagaMiddleware.run(watcherSaga);
 
 ReactDOM.render(
     <Provider store={store}>

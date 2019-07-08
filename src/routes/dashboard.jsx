@@ -9,6 +9,7 @@ import DashboardPage from "../views/Dashboard.jsx";
 /*
 import TableList from "../views/TableList/TableList.jsx";*/
 import ViewCustomer from "../views/viewCustomer.jsx";
+import Main from "../component/main.jsx";
 /*
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
@@ -31,6 +32,13 @@ const dashboardRoutes = [
         navbarName: "Approval Create",
         icon: "",
         component: ViewCustomer
+    },
+    {
+        path: "/table",
+        sidebarName: "Table List",
+        navbarName: "Table List",
+        icon: "content_paste",
+        component: Main
     },
     /*{
         path: "/table",
