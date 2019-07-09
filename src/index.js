@@ -15,6 +15,7 @@ import store from './store'
 
 const hist = createBrowserHistory();
 
+
 // Create an enhanced history that syncs navigation events with the store
 // const history = syncHistoryWithStore(hist, store);
 

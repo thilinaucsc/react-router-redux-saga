@@ -11,7 +11,6 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
-    "redux-act": "^1.7.7",
     "redux-saga": "^1.0.5"
   },
   "scripts": {
