@@ -43,7 +43,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestDog: () => dispatch({ type: "API_CALL_REQUEST" })
+    onRequestDog: () => dispatch({ type: 'API_CALL_REQUEST'})
   };
 };
 
