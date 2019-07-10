@@ -3,6 +3,7 @@ import logo from "../logo.svg";
 import "../App.css";
 
 import { connect } from "react-redux";
+import * as types from '../constants/actionTypes';
 
 class Main extends Component {
   render() {
@@ -12,7 +13,7 @@ class Main extends Component {
       <div className="App">
         <header className="App-header">
           <img src={dog || logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Dog Saga</h1>
+          <h1 className="App-title">Welcome to Saga</h1>
         </header>
 
         {dog ? (
@@ -36,14 +37,16 @@ class Main extends Component {
 const mapStateToProps = state => {
   return {
     fetching: state.fetching,
-    dog: state.dog,
+    dog: state.a.dog,
     error: state.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestDog: () => dispatch({ type: 'API_CALL_REQUEST'})
+    onRequestDog: () => dispatch({
+      type: types.API_CALL_REQUEST
+    })
   };
 };
 

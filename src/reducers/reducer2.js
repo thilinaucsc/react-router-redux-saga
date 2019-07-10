@@ -7,5 +7,5 @@ export default function counter(state = 0, action) {
         default:
             return state
     }
-}
+};
 

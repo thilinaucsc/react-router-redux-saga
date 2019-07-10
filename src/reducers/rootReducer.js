@@ -2,12 +2,14 @@ import { combineReducers } from 'redux'
 import a from './reducer'
 import b from './reducer2'
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     a,
     b
 });
 
-export default function(initialData) {
+// export default index;
+
+/*export default function(initialData) {
     return function (state, action) {
         if (!state) {
             console.log('no state', initialData);
@@ -19,4 +21,4 @@ export default function(initialData) {
 
         return rootReducer(state, action);
     }
-};
+};*/
